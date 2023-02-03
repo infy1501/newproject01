@@ -17,6 +17,6 @@ stages:
       
     - task: PowerShell@2
       inputs:
-        filePath: 'sample.ps1'
+        filePath: 'newps.ps1'
 
 
