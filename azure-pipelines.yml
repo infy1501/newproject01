@@ -34,8 +34,9 @@ stages:
   jobs:
   - job:
     steps:
+      - checkout: self
 
-      - checkout: newproject01
+      # - checkout: newproject01
       - task: CopyFiles@2
         inputs:
           SourceFolder: '$(System.DefaultWorkingDirectory)/'
