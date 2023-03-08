@@ -18,10 +18,10 @@ pool:
   vmImage: windows-latest
 resources:
   repositories:
-    - repository: devopsdemo
+    - repository: newproject01
       type: github
-      name: adi-advanced-analytics/devopsdemo
-      endpoint: adi-advanced-analytics-enterpriseapps-devops
+      name: infy1501/newproject01
+      endpoint: infy1501
       ref: refs/heads/$(branchName)
       
 stages:
