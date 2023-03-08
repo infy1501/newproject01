@@ -10,6 +10,8 @@ parameters:
   values:
     - Develop
     - main
+variables:
+  branchName: ${{ parameters.Branch }}
 
 # trigger:
 # - main
