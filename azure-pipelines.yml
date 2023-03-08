@@ -2,13 +2,28 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+parameters:
+- name: Branch
+  displayName: Branch to Deploy
+  type: string
+  default: Develop
+  values:
+    - Develop
+    - main
 
-trigger:
-- main
+# trigger:
+# - main
 
 pool:
-  vmImage: ubuntu-latest
-
+  vmImage: windows-latest
+resources:
+  repositories:
+    - repository: devopsdemo
+      type: github
+      name: adi-advanced-analytics/devopsdemo
+      endpoint: adi-advanced-analytics-enterpriseapps-devops
+      ref: refs/heads/$(branchName)
+      
 stages:
 - stage:
   jobs:
