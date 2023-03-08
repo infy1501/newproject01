@@ -2,20 +2,20 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-trigger:
-- pull_request
-# parameters:
-# - name: Branch
-#   displayName: Branch to Deploy
-#   type: string
-#   default: Develop
-#   values:
-#     - Develop
-#     - main
-# variables:
-#   branchName: ${{ parameters.Branch }}
+# trigger:
+# - pull_request
+parameters:
+- name: Branch
+  displayName: Branch to Deploy
+  type: string
+  default: Develop
+  values:
+    - Develop
+    - main
 variables:
-  branchName: ${{ trigger }}
+  branchName: ${{ parameters.Branch }}
+# variables:
+#   branchName: ${{ trigger }}
 # trigger:
 # - main
 
