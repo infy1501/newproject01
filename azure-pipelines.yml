@@ -4,18 +4,18 @@
 # https://aka.ms/yaml
 # trigger:
 # - pull_request
-# parameters:
-# - name: Branch
-#   displayName: Branch to Deploy
-#   type: string
-#   default: fetaure01
-#   values:
-#     - fetaure01
-#     - Develop
-#     - main
+parameters:
+- name: Branch
+  displayName: Branch to Deploy
+  type: string
+  default: fetaure01
+  values:
+    - fetaure01
+    - Develop
+    - main
 variables:
-  # branchName: ${{ parameters.Branch }}
-  branchName: $(Build.SourceBranchName)
+  branchName: ${{ parameters.Branch }}
+  # branchName: $(Build.SourceBranchName)
 # variables:
 #   branchName: ${{ trigger }}
 # trigger:
@@ -36,9 +36,9 @@ stages:
   jobs:
   - job:
     steps:
-      - checkout: self
+      # - checkout: self
 
-      # - checkout: newproject01
+      - checkout: newproject01
       - task: CopyFiles@2
         inputs:
           SourceFolder: '$(System.DefaultWorkingDirectory)/'
