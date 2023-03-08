@@ -8,8 +8,9 @@ parameters:
 - name: Branch
   displayName: Branch to Deploy
   type: string
-  default: Develop
+  default: fetaure01
   values:
+    - fetaure01
     - Develop
     - main
 variables:
