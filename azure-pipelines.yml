@@ -4,17 +4,18 @@
 # https://aka.ms/yaml
 # trigger:
 # - pull_request
-parameters:
-- name: Branch
-  displayName: Branch to Deploy
-  type: string
-  default: fetaure01
-  values:
-    - fetaure01
-    - Develop
-    - main
+# parameters:
+# - name: Branch
+#   displayName: Branch to Deploy
+#   type: string
+#   default: fetaure01
+#   values:
+#     - fetaure01
+#     - Develop
+#     - main
 variables:
-  branchName: ${{ parameters.Branch }}
+  # branchName: ${{ parameters.Branch }}
+  branchName: ${{ Build.SourceBranchName }}
 # variables:
 #   branchName: ${{ trigger }}
 # trigger:
