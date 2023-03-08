@@ -37,11 +37,17 @@ stages:
           SourceFolder: '$(System.DefaultWorkingDirectory)/'
           Contents: '**'
           TargetFolder: '$(System.DefaultWorkingDirectory)/dist'
+      
       - task: PublishBuildArtifacts@1
         inputs:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
           ArtifactName: 'drop'
           publishLocation: 'Container'
+      - task: CmdLine@2
+        displayName: 'List files'
+        inputs:
+          script: |
+            for %%f in ( "$(Build.ArtifactStagingDirectory)\*" ) do @echo %%f
       # - task: PowerShell@2
       #   inputs:
       #     filePath: 'newps.ps1'
