@@ -15,7 +15,7 @@
 #     - main
 variables:
   # branchName: ${{ parameters.Branch }}
-  branchName: ${{ Build.SourceBranchName }}
+  branchName: $(Build.SourceBranchName)
 # variables:
 #   branchName: ${{ trigger }}
 # trigger:
